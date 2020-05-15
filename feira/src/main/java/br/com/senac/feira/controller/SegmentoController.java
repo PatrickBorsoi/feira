@@ -1,4 +1,4 @@
-package br.com.senac.feira.service.controller;
+package br.com.senac.feira.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
