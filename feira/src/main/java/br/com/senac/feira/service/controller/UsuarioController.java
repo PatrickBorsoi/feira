@@ -17,7 +17,7 @@ import br.com.senac.feira.service.UsuarioServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("feira/usuario")
+@RequestMapping("usuario")
 public class UsuarioController {
 
 	@Autowired

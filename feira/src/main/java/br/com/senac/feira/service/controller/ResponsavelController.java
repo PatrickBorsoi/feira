@@ -13,7 +13,7 @@ import br.com.senac.feira.service.ResponsavelServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("responsavel")
+@RequestMapping("feira/responsavel")
 public class ResponsavelController {
 
 	@Autowired

@@ -13,7 +13,7 @@ import br.com.senac.feira.service.BairroServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("feira/bairro")
+@RequestMapping("bairro")
 public class BairroController {
 
 	@Autowired

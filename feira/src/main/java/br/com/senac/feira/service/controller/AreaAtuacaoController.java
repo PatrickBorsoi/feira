@@ -13,7 +13,7 @@ import br.com.senac.feira.service.AreaAtuacaoServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("feira/areaAtuacao")
+@RequestMapping("areaAtuacao")
 public class AreaAtuacaoController {
 
 	@Autowired

@@ -14,7 +14,7 @@ import br.com.senac.feira.service.EstadoServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("feira/estado")
+@RequestMapping("estado")
 public class EstadoController {
 
 	@Autowired

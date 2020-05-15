@@ -14,7 +14,7 @@ import br.com.senac.feira.service.SegmentoUsuarioServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("feira/segmento")
+@RequestMapping("segmento")
 public class SegmentoController {
 
 	@Autowired

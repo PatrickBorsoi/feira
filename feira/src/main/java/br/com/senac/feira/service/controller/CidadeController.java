@@ -14,7 +14,7 @@ import br.com.senac.feira.service.CidadeServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("feira/cidade")
+@RequestMapping("cidade")
 public class CidadeController {
 
 	@Autowired

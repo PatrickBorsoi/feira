@@ -14,7 +14,7 @@ import br.com.senac.feira.service.StandServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("feira/stand")
+@RequestMapping("stand")
 public class StandController {
 
 	@Autowired

@@ -15,7 +15,7 @@ import br.com.senac.feira.service.VagaServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("feira/empresa")
+@RequestMapping("empresa")
 public class EmpresaController {
 
 	@Autowired

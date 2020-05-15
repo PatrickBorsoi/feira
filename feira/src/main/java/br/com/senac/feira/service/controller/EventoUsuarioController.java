@@ -13,7 +13,7 @@ import br.com.senac.feira.service.EventoUsuarioServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("feira/eventoUsuario")
+@RequestMapping("eventoUsuario")
 public class EventoUsuarioController {
 
 	@Autowired

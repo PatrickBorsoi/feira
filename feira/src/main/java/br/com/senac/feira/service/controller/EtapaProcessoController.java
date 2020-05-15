@@ -13,7 +13,7 @@ import br.com.senac.feira.service.EtapaProcessoServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("feira/etapaProcesso")
+@RequestMapping("etapaProcesso")
 public class EtapaProcessoController {
 
 	@Autowired

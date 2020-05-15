@@ -14,7 +14,7 @@ import br.com.senac.feira.service.EventoTipoServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("feira/eventoTipo")
+@RequestMapping("eventoTipo")
 public class EventoTipoController {
 
 	@Autowired

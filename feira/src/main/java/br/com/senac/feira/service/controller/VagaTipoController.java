@@ -13,7 +13,7 @@ import br.com.senac.feira.service.VagaTipoServiceImpl;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("feira/vagaTipo")
+@RequestMapping("vagaTipo")
 public class VagaTipoController {
 
 	@Autowired
