@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http:www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset-8" />
+<meta name="viewport" content="width=device-width">
+<title>Cadastrar Responsável</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
+<link
+	src="https://maxcdn.bootstrap.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</head>
+<body>
+	<div class="container">
+		<div class="panel-default">
+			<div class="text-center">
+				<h1 class="h4 text-gray-900 mb-4">Lista de Responsáveis</h1>
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table
+						class="table table-sm table-striped table-hover table-bordered">
+						<thead>
+							<tr class="align-middle text-center">
+								<th>ID</th>
+								<th>NOME COMPLETO</th>
+								<th>USUÁRIO</th>
+								<th>TELEFONE</th>
+								<th>E-MAIL</th>
+								<th>STATUS</th>
+								<th>ALTERAR</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="responsavel: ${responsaveis}">
+								<td class="align-middle text-center" th:text="${responsavel.responsavel_id}"></td>
+								<td class="align-middle text-center"
+									th:text="${responsavel.responsavel_nome_completo}"></td>
+								<td class="align-middle text-center"
+									th:text="${responsavel.responsavel_usuario}"></td>
+								<td class="align-middle text-center"
+									th:text="${responsavel.responsavel_telefone}"></td>
+								<td class="align-middle text-center"
+									th:text="${responsavel.responsavel_email}">
+								<td class="align-middle text-center"
+									th:text="${responsavel.responsavel_status == 0} ? 'INATIVO' : 'ATIVO'">									
+								<td class="align-middle text-center">
+									<div class="btn-group pull-rigth">
+										<a class="btn btn-sm btn-primary"
+											th:href="@{/responsavel/alteraResponsavel/{id}(id=${responsavel.responsavel_id})}">ALTERAR</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<a class="btn btn-sm btn-success"
+					th:href="@{/responsavel/cadastraResponsavel}">CADASTRAR NOVO
+					RESPONSÁVEL</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
