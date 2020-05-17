@@ -18,7 +18,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
 @Entity
-@Table(name = "vagas")
+@Table(name = "vaga")
 public class Vaga implements Serializable {
 
 	private static final long serialVersionUID = 7990505509176791810L;
@@ -53,7 +53,7 @@ public class Vaga implements Serializable {
 
 	private Date vaga_disponibilidade_fim;
 
-	private int vaga_status;
+	private String vaga_status;
 
 	@OneToOne
 	@JoinColumn(name = "area_atuacao_id", nullable = false)
@@ -91,13 +91,7 @@ public class Vaga implements Serializable {
 
 	}
 
-	public Vaga(Integer vaga_id, int vaga_senac, String vaga_codigo_senac, String vaga_url_vaga, String vaga_cargo,
-			String vaga_descricao, int vaga_quantidade, double vaga_remuneracao, String vaga_requisitos,
-			String vaga_atividades_principais, String vaga_beneficios, String vaga_observacoes,
-			Date vaga_disponibilidade_inicio, Date vaga_disponibilidade_fim, int vaga_status, AreaAtuacao areaAtuacao,
-			Bairro bairro, Cidade cidade, Empresa empresa, Estado estado, Segmento segmento, VagaTipo vagaTipo,
-			List<Candidatura> candidaturas) {
-		super();
+	public Vaga(Integer vaga_id, int vaga_senac, String vaga_codigo_senac, String vaga_url_vaga, String vaga_cargo, String vaga_descricao, int vaga_quantidade, double vaga_remuneracao, String vaga_requisitos, String vaga_atividades_principais, String vaga_beneficios, String vaga_observacoes, Date vaga_disponibilidade_inicio, Date vaga_disponibilidade_fim, String vaga_status, AreaAtuacao areaAtuacao, Bairro bairro, Cidade cidade, Empresa empresa, Estado estado, Segmento segmento, VagaTipo vagaTipo, List<Candidatura> candidaturas) {
 		this.vaga_id = vaga_id;
 		this.vaga_senac = vaga_senac;
 		this.vaga_codigo_senac = vaga_codigo_senac;
@@ -121,6 +115,10 @@ public class Vaga implements Serializable {
 		this.segmento = segmento;
 		this.vagaTipo = vagaTipo;
 		this.candidaturas = candidaturas;
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
 	}
 
 	public Integer getVaga_id() {
@@ -235,11 +233,11 @@ public class Vaga implements Serializable {
 		this.vaga_disponibilidade_fim = vaga_disponibilidade_fim;
 	}
 
-	public int getVaga_status() {
+	public String getVaga_status() {
 		return vaga_status;
 	}
 
-	public void setVaga_status(int vaga_status) {
+	public void setVaga_status(String vaga_status) {
 		this.vaga_status = vaga_status;
 	}
 
@@ -305,9 +303,5 @@ public class Vaga implements Serializable {
 
 	public void setCandidaturas(List<Candidatura> candidaturas) {
 		this.candidaturas = candidaturas;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 }

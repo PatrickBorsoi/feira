@@ -14,7 +14,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
 @Entity
-@Table(name = "segmentos")
+@Table(name = "segmento")
 public class Segmento implements Serializable {
 
 	private static final long serialVersionUID = 1516769406405097492L;
@@ -35,13 +35,15 @@ public class Segmento implements Serializable {
 
 	}
 
-	public Segmento(Integer segmento_id, String segmento_descricao, int segmento_Status,
-			List<SegmentoUsuario> segmentoUsuarios) {
-		super();
+	public Segmento(Integer segmento_id, String segmento_descricao, int segmento_Status, List<SegmentoUsuario> segmentoUsuarios) {
 		this.segmento_id = segmento_id;
 		this.segmento_descricao = segmento_descricao;
 		this.segmento_Status = segmento_Status;
 		this.segmentoUsuarios = segmentoUsuarios;
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
 	}
 
 	public Integer getSegmento_id() {
@@ -74,9 +76,5 @@ public class Segmento implements Serializable {
 
 	public void setSegmentoUsuarios(List<SegmentoUsuario> segmentoUsuarios) {
 		this.segmentoUsuarios = segmentoUsuarios;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 }

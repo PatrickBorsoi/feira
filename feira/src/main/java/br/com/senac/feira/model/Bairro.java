@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "bairros")
+@Table(name = "bairro")
 public class Bairro implements Serializable {
 
 	private static final long serialVersionUID = -1014886601423434925L;

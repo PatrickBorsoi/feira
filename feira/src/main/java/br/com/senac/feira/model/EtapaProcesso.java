@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "etapa_processos")
+@Table(name = "etapa_processo")
 public class EtapaProcesso implements Serializable {
 
 	private static final long serialVersionUID = -7867138759861781253L;

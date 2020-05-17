@@ -16,7 +16,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
 @Entity
-@Table(name = "cidades")
+@Table(name = "cidade")
 public class Cidade implements Serializable {
 
 	private static final long serialVersionUID = -3726967027122501480L;
@@ -30,7 +30,7 @@ public class Cidade implements Serializable {
 	private int cidade_status;
 
 	@ManyToOne
-	@JoinColumn(name = "estado_id", nullable = false)
+	@JoinColumn(name = "estado_estado_id", nullable = false)
 	private Estado estado;
 
 	@OneToMany(mappedBy = "cidade", orphanRemoval = true)

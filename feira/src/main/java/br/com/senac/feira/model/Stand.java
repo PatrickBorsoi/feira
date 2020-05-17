@@ -16,7 +16,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
 @Entity
-@Table(name = "stands")
+@Table(name = "stand")
 public class Stand implements Serializable{
 
 	private static final long serialVersionUID = 628073798127632644L;
@@ -31,7 +31,7 @@ public class Stand implements Serializable{
 	
 	private String stand_link_chat;
 	
-	private int stand_status;
+	private boolean stand_status;
 	
 	private String stand_link_logomarca;
 	
@@ -47,9 +47,7 @@ public class Stand implements Serializable{
 		
 	}
 
-	public Stand(Integer stand_id, String stand_nome, String stand_link_apresentacao, String stand_link_chat,
-			int stand_status, String stand_link_logomarca, Empresa empresa, List<Evento> eventos) {
-		super();
+	public Stand(Integer stand_id, String stand_nome, String stand_link_apresentacao, String stand_link_chat, boolean stand_status, String stand_link_logomarca, Empresa empresa, List<Evento> eventos) {
 		this.stand_id = stand_id;
 		this.stand_nome = stand_nome;
 		this.stand_link_apresentacao = stand_link_apresentacao;
@@ -58,6 +56,10 @@ public class Stand implements Serializable{
 		this.stand_link_logomarca = stand_link_logomarca;
 		this.empresa = empresa;
 		this.eventos = eventos;
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
 	}
 
 	public Integer getStand_id() {
@@ -92,11 +94,11 @@ public class Stand implements Serializable{
 		this.stand_link_chat = stand_link_chat;
 	}
 
-	public int getStand_status() {
+	public boolean geteStand_status() {
 		return stand_status;
 	}
 
-	public void setStand_status(int stand_status) {
+	public void setStand_status(boolean stand_status) {
 		this.stand_status = stand_status;
 	}
 
@@ -122,9 +124,5 @@ public class Stand implements Serializable{
 
 	public void setEventos(List<Evento> eventos) {
 		this.eventos = eventos;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 }

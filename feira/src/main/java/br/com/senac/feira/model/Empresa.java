@@ -12,9 +12,10 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.Type;
 
 @Entity
-@Table(name = "empresas")
+@Table(name = "empresa")
 public class Empresa implements Serializable {
 
 	private static final long serialVersionUID = -1954672581118611077L;
@@ -26,7 +27,7 @@ public class Empresa implements Serializable {
 	private String empresa_nome;
 
 	private String empresa_cnpj;
-
+	@Type(type="text")
 	private String empresa_descricao;
 
 	@OneToMany(mappedBy = "empresa", orphanRemoval = true)

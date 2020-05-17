@@ -14,7 +14,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
 @Entity
-@Table(name = "estados")
+@Table(name = "estado")
 public class Estado implements Serializable {
 
 	private static final long serialVersionUID = -83403215785378954L;

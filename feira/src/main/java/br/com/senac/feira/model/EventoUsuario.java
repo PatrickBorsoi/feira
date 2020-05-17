@@ -2,6 +2,7 @@ package br.com.senac.feira.model;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "evento_usuarios")
+@Table(name = "evento_usuario")
 public class EventoUsuario implements Serializable {
 
 	private static final long serialVersionUID = -2241381715227914723L;
@@ -21,7 +22,7 @@ public class EventoUsuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer evento_usuario_id;
 
-	private Date evento_usuario_data_registro;
+	private LocalDateTime evento_usuario_data_registro;
 	
 	private String evento_usuario_link_certificado;
 	
@@ -39,15 +40,17 @@ public class EventoUsuario implements Serializable {
 
 	}
 
-	public EventoUsuario(Integer evento_usuario_id, Date evento_usuario_data_registro,
-			String evento_usuario_link_certificado, int evento_usuario_status, Usuario usuario, Evento evento) {
-		super();
+	public EventoUsuario(Integer evento_usuario_id, LocalDateTime evento_usuario_data_registro, String evento_usuario_link_certificado, int evento_usuario_status, Usuario usuario, Evento evento) {
 		this.evento_usuario_id = evento_usuario_id;
 		this.evento_usuario_data_registro = evento_usuario_data_registro;
 		this.evento_usuario_link_certificado = evento_usuario_link_certificado;
 		this.evento_usuario_status = evento_usuario_status;
 		this.usuario = usuario;
 		this.evento = evento;
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
 	}
 
 	public Integer getEvento_usuario_id() {
@@ -58,11 +61,11 @@ public class EventoUsuario implements Serializable {
 		this.evento_usuario_id = evento_usuario_id;
 	}
 
-	public Date getEvento_usuario_data_registro() {
+	public LocalDateTime getEvento_usuario_data_registro() {
 		return evento_usuario_data_registro;
 	}
 
-	public void setEvento_usuario_data_registro(Date evento_usuario_data_registro) {
+	public void setEvento_usuario_data_registro(LocalDateTime evento_usuario_data_registro) {
 		this.evento_usuario_data_registro = evento_usuario_data_registro;
 	}
 
@@ -96,9 +99,5 @@ public class EventoUsuario implements Serializable {
 
 	public void setEvento(Evento evento) {
 		this.evento = evento;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 }

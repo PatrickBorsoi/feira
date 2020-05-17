@@ -14,7 +14,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
 @Entity
-@Table(name = "evento_tipos")
+@Table(name = "evento_tipo")
 public class EventoTipo implements Serializable {
 
 	private static final long serialVersionUID = 1113766295348354427L;

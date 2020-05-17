@@ -2,6 +2,7 @@ package br.com.senac.feira.model;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -17,7 +18,7 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
 @Entity
-@Table(name = "eventos")
+@Table(name = "evento")
 public class Evento implements Serializable {
 
 	private static final long serialVersionUID = -5804018272266012520L;
@@ -30,7 +31,9 @@ public class Evento implements Serializable {
 
 	private String evento_link_evento;
 
-	private Date evento_data_hora;
+	private LocalDateTime evento_data_inicio;
+
+	private LocalDateTime evento_data_fim;
 
 	private String evento_link_banner;
 
@@ -52,22 +55,27 @@ public class Evento implements Serializable {
 
 	public Evento() {
 
+
 	}
 
-	public Evento(Integer evento_id, String evento_titulo, String evento_link_evento, Date evento_data_hora,
-			String evento_link_banner, int evento_vagas, int evento_status, Stand stand, Stand eventoTipo,
-			List<EventoUsuario> eventoUsuarios) {
-		super();
+	public Evento(Integer evento_id, String evento_titulo, String evento_link_evento, LocalDateTime evento_data_inicio, LocalDateTime evento_data_fim, String evento_link_banner, int evento_vagas, int evento_status, Stand stand, Stand eventoTipo, List<EventoUsuario> eventoUsuarios) {
 		this.evento_id = evento_id;
 		this.evento_titulo = evento_titulo;
 		this.evento_link_evento = evento_link_evento;
-		this.evento_data_hora = evento_data_hora;
+		this.evento_data_inicio = evento_data_inicio;
+		this.evento_data_fim = evento_data_fim;
 		this.evento_link_banner = evento_link_banner;
 		this.evento_vagas = evento_vagas;
 		this.evento_status = evento_status;
 		this.stand = stand;
 		this.eventoTipo = eventoTipo;
 		this.eventoUsuarios = eventoUsuarios;
+
+
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
 	}
 
 	public Integer getEvento_id() {
@@ -94,12 +102,20 @@ public class Evento implements Serializable {
 		this.evento_link_evento = evento_link_evento;
 	}
 
-	public Date getEvento_data_hora() {
-		return evento_data_hora;
+	public LocalDateTime getEvento_data_inicio() {
+		return evento_data_inicio;
 	}
 
-	public void setEvento_data_hora(Date evento_data_hora) {
-		this.evento_data_hora = evento_data_hora;
+	public void setEvento_data_inicio(LocalDateTime evento_data_inicio) {
+		this.evento_data_inicio = evento_data_inicio;
+	}
+
+	public LocalDateTime getEvento_data_fim() {
+		return evento_data_fim;
+	}
+
+	public void setEvento_data_fim(LocalDateTime evento_data_fim) {
+		this.evento_data_fim = evento_data_fim;
 	}
 
 	public String getEvento_link_banner() {
@@ -148,9 +164,5 @@ public class Evento implements Serializable {
 
 	public void setEventoUsuarios(List<EventoUsuario> eventoUsuarios) {
 		this.eventoUsuarios = eventoUsuarios;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 }

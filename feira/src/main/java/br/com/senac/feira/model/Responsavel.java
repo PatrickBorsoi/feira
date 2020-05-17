@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "responsaveis")
+@Table(name = "responsavel")
 public class Responsavel implements Serializable {
 
 	private static final long serialVersionUID = -2794341436585057576L;
@@ -22,7 +22,7 @@ public class Responsavel implements Serializable {
 
 	private String responsavel_nome_completo;
 
-	private int responsavel_status;
+	private boolean responsavel_status;
 
 	private String responsavel_usuario;
 
@@ -40,10 +40,7 @@ public class Responsavel implements Serializable {
 
 	}
 
-	public Responsavel(Integer responsavel_id, String responsavel_nome_completo, int responsavel_status,
-			String responsavel_usuario, String responsavel_senha, String responsavel_email, String responsavel_telefone,
-			Empresa empresa) {
-		super();
+	public Responsavel(Integer responsavel_id, String responsavel_nome_completo, boolean responsavel_status, String responsavel_usuario, String responsavel_senha, String responsavel_email, String responsavel_telefone, Empresa empresa) {
 		this.responsavel_id = responsavel_id;
 		this.responsavel_nome_completo = responsavel_nome_completo;
 		this.responsavel_status = responsavel_status;
@@ -52,6 +49,10 @@ public class Responsavel implements Serializable {
 		this.responsavel_email = responsavel_email;
 		this.responsavel_telefone = responsavel_telefone;
 		this.empresa = empresa;
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
 	}
 
 	public Integer getResponsavel_id() {
@@ -70,11 +71,11 @@ public class Responsavel implements Serializable {
 		this.responsavel_nome_completo = responsavel_nome_completo;
 	}
 
-	public int getResponsavel_status() {
+	public boolean getResponsavel_status() {
 		return responsavel_status;
 	}
 
-	public void setResponsavel_status(int responsavel_status) {
+	public void setResponsavel_status(boolean responsavel_status) {
 		this.responsavel_status = responsavel_status;
 	}
 
@@ -116,9 +117,5 @@ public class Responsavel implements Serializable {
 
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 }

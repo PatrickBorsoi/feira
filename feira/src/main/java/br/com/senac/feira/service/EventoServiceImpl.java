@@ -35,7 +35,8 @@ public class EventoServiceImpl implements EventoService {
 		Evento eventoAntigo = search(evento.getEvento_id());
 		eventoAntigo.setEvento_titulo(evento.getEvento_titulo());
 		eventoAntigo.setEvento_link_evento(evento.getEvento_link_evento());
-		eventoAntigo.setEvento_data_hora(evento.getEvento_data_hora());
+		eventoAntigo.setEvento_data_inicio(evento.getEvento_data_inicio());
+		eventoAntigo.setEvento_data_fim(evento.getEvento_data_fim());
 		eventoAntigo.setEvento_link_banner(evento.getEvento_link_banner());
 		eventoAntigo.setEvento_vagas(evento.getEvento_vagas());
 		eventoAntigo.setEvento_status(evento.getEvento_status());

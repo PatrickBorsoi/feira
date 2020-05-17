@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "vaga_tipos")
+@Table(name = "vaga_tipo")
 public class VagaTipo implements Serializable {
 
 	private static final long serialVersionUID = -6214980825927249106L;
@@ -20,17 +20,20 @@ public class VagaTipo implements Serializable {
 
 	private String vaga_tipo_descricao;
 
-	private int vaga_tipo_status;
+	private String vaga_tipo_status;
 
 	public VagaTipo() {
 
 	}
 
-	public VagaTipo(Integer vaga_tipo_id, String vaga_tipo_descricao, int vaga_tipo_status) {
-		super();
+	public VagaTipo(Integer vaga_tipo_id, String vaga_tipo_descricao, String vaga_tipo_status) {
 		this.vaga_tipo_id = vaga_tipo_id;
 		this.vaga_tipo_descricao = vaga_tipo_descricao;
 		this.vaga_tipo_status = vaga_tipo_status;
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
 	}
 
 	public Integer getVaga_tipo_id() {
@@ -49,15 +52,11 @@ public class VagaTipo implements Serializable {
 		this.vaga_tipo_descricao = vaga_tipo_descricao;
 	}
 
-	public int getVaga_tipo_status() {
+	public String getVaga_tipo_status() {
 		return vaga_tipo_status;
 	}
 
-	public void setVaga_tipo_status(int vaga_tipo_status) {
+	public void setVaga_tipo_status(String vaga_tipo_status) {
 		this.vaga_tipo_status = vaga_tipo_status;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 }
